@@ -1114,7 +1114,7 @@ Key of **B**
 **[Intro]**
 
 ```
-Bm                Em
+Bm    C#    D    Em    F#    B
 ```
 
 **[Verse 1]**
@@ -1129,7 +1129,8 @@ Totoy tumalon ka, dumapa kung kailangan
  G                     A              Bm
 At baka tamaan pa ng mga balang ligaw
 
-Bm                         D5
+Bm    C#    D    Em    F#    B
+                         D5
 ```
 
 **[Verse 2]**
@@ -1159,6 +1160,8 @@ Ang kulay at tatak ay di siyang dahilan
 Hangga't marami ang lugmok sa kahirapan
   G           A             F#m
 At ang hustisya ay para lang sa mayaman
+
+F#    G     F#    D    C#    Bm
 ```
 
 **[Chorus]**
@@ -1168,6 +1171,8 @@ At ang hustisya ay para lang sa mayaman
 Habang may tatsulok at sila ang nasa tuktok
  G   A                  Bm
 Hindi matatapos itong gulo
+
+Bm    C#    D    Em    F#    B
 
 Bm                D5
 ```
@@ -1185,12 +1190,41 @@ Totoy kumilos ka, baliktarin ang tatsulok
 Tulad ng dukha, nailagay mo sa tuktok
 ```
 
-**[Solo]**
-
-*(99% Sure)*
+**[Pre-Chorus]**
 
 ```
-Bm   F#m G Em G A F#m B Em F#m
+   G                             F#m
+Hindi pula't dilaw ang tunay na magkalaban
+G                            F#m
+Ang kulay at tatak ay di siyang dahilan
+  Bm                     A
+Hangga't marami ang lugmok sa kahirapan
+  G           A             F#m
+At ang hustisya ay para lang sa mayaman
+
+F#    G     F#    D    C#    Bm
+```
+
+**[Chorus]**
+
+```
+   Bm                           F#m
+Habang may tatsulok at sila ang nasa tuktok
+ G    A                 Bm
+Hindi matatapos itong gulo
+   Bm                           F#m
+Habang may tatsulok at sila ang nasa tuktok
+ G    A                 Bm   (Bm 4 counts)
+Hindi matatapos itong gulo
+```
+
+**[All Instruments]**
+
+```
+Bm - A - Bm - A - Bm - A
+B - A - G - F# - G - A - B
+Bm - A - Bm - A - Bm - A
+B - A - G - F# - G - A - G
 ```
 
 **[Pre-Chorus]**
@@ -1209,7 +1243,7 @@ At ang hustisya ay para lang sa mayaman
 **[Chorus]**
 
 ```
-   Bm                           F#m
+   Bm (break)                        F#m
 Habang may tatsulok at sila ang nasa tuktok
  G    A                 Bm
 Hindi matatapos itong gulo

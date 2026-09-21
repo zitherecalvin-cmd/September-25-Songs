@@ -917,7 +917,7 @@
       note: "Written in B minor per the source sheet; \"key\" is set to \"B\" (the root pitch class) so the on-screen key label keeps updating correctly as you transpose.",
       sections: [
         { label: "Intro", lines: [
-          "Bm                Em"
+          "Bm    C#    D    Em    F#    B"
         ] },
         { label: "Verse 1", lines: [
           " Bm                      A",
@@ -929,7 +929,8 @@
           " G                     A              Bm",
           "At baka tamaan pa ng mga balang ligaw",
           "",
-          "Bm                         D5"
+          "Bm    C#    D    Em    F#    B",
+          "                         D5"
         ] },
         { label: "Verse 2", lines: [
           "Bm                     A",
@@ -952,13 +953,17 @@
           "  Bm                     A",
           "Hangga't marami ang lugmok sa kahirapan",
           "  G           A             F#m",
-          "At ang hustisya ay para lang sa mayaman"
+          "At ang hustisya ay para lang sa mayaman",
+          "",
+          "F#    G     F#    D    C#    Bm"
         ] },
         { label: "Chorus", lines: [
           "      Bm                           F#m",
           "Habang may tatsulok at sila ang nasa tuktok",
           " G   A                  Bm",
           "Hindi matatapos itong gulo",
+          "",
+          "Bm    C#    D    Em    F#    B",
           "",
           "Bm                D5"
         ] },
@@ -972,9 +977,33 @@
           " G                     A              Bm",
           "Tulad ng dukha, nailagay mo sa tuktok"
         ] },
-        { label: "Solo", lines: [
-          "// 99% Sure",
-          "Bm   F#m G Em G A F#m B Em F#m"
+        { label: "Pre-Chorus", lines: [
+          "   G                             F#m",
+          "Hindi pula't dilaw ang tunay na magkalaban",
+          "G                            F#m",
+          "Ang kulay at tatak ay di siyang dahilan",
+          "  Bm                     A",
+          "Hangga't marami ang lugmok sa kahirapan",
+          "  G           A             F#m",
+          "At ang hustisya ay para lang sa mayaman",
+          "",
+          "F#    G     F#    D    C#    Bm"
+        ] },
+        { label: "Chorus", lines: [
+          "   Bm                           F#m",
+          "Habang may tatsulok at sila ang nasa tuktok",
+          " G    A                 Bm",
+          "Hindi matatapos itong gulo",
+          "   Bm                           F#m",
+          "Habang may tatsulok at sila ang nasa tuktok",
+          " G    A                 Bm   (Bm 4 counts)",
+          "Hindi matatapos itong gulo"
+        ] },
+        { label: "All Instruments", lines: [
+          "Bm - A - Bm - A - Bm - A",
+          "B - A - G - F# - G - A - B",
+          "Bm - A - Bm - A - Bm - A",
+          "B - A - G - F# - G - A - G"
         ] },
         { label: "Pre-Chorus", lines: [
           "   G                             F#m",
@@ -987,7 +1016,7 @@
           "At ang hustisya ay para lang sa mayaman"
         ] },
         { label: "Chorus", lines: [
-          "   Bm                           F#m",
+          "   Bm (break)                        F#m",
           "Habang may tatsulok at sila ang nasa tuktok",
           " G    A                 Bm",
           "Hindi matatapos itong gulo",
