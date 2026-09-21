@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SET 2 SEP 25 &mdash; Chord Guide</title>
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d1117; --bg2: #161b22; --bg3: #21262d; --border: #30363d;
+  --text: #e6edf3; --text-dim: #8b949e;
+  --chord: #ffa657; --chord-bg: rgba(255,166,87,0.08);
+  --section: #79c0ff; --title: #f0f6fc; --accent: #388bfd;
+  --radius: 8px;
+  --toolbar-h: 56px;
+}
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px; line-height: 1.5; overflow: hidden; }
+
+/* ══ APP SHELL (sidebar + main) ══ */
+.app-shell { display: flex; height: 100vh; height: 100dvh; }
+
+/* SIDEBAR — persistent setlist, own scrollbar, always visible on desktop */
+.sidebar { width: 260px; flex-shrink: 0; height: 100vh; height: 100dvh; overflow-y: auto;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain;
+  background: var(--bg2); border-right: 1px solid var(--border);
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+  transition: transform 0.25s ease; z-index: 1200; }
+.sidebar-brand { font-weight: 700; font-size: 18px; color: var(--chord);
+  padding: 18px 20px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--bg2); z-index: 1;
+  display: flex; align-items: center; gap: 8px; }
+.sidebar-count { font-size: 12px; color: var(--text-dim); font-weight: 400;
+  margin-left: auto; }
+.sidebar-nav { display: flex; flex-direction: column; padding: 8px; gap: 2px; }
+.nav-link { color: var(--text-dim); text-decoration: none; font-size: 14px;
+  padding: 10px 12px; border-radius: 6px; border: 1px solid transparent;
+  transition: all 0.15s; display: block; line-height: 1.3; }
+.nav-link:hover { color: var(--text); background: var(--bg3); }
+.nav-link.active { color: var(--chord); background: rgba(255,166,87,0.1);
+  border-color: var(--chord); font-weight: 600; }
+.nav-link-title { display: block; }
+.nav-link-artist { display: block; font-size: 11px; color: var(--text-dim);
+  opacity: 0.75; margin-top: 2px; font-weight: 400; }
+.nav-link.active .nav-link-artist { color: var(--chord); opacity: 0.8; }
+
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 1100; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+.sidebar-overlay.visible { opacity: 1; pointer-events: auto; }
+
+/* MAIN — independently scrolling content area */
+.main { flex: 1; min-width: 0; height: 100vh; height: 100dvh; overflow-y: auto;
+  -webkit-overflow-scrolling: touch; overscroll-behavior-y: contain; scroll-behavior: smooth; }
+
+.toolbar { position: sticky; top: 0; z-index: 500; background: var(--bg2);
+  border-bottom: 1px solid var(--border); display: flex; align-items: center;
+  gap: 10px; padding: 10px 20px; min-height: var(--toolbar-h); }
+.menu-btn { display: none; background: var(--bg3); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px;
+  font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap;
+  align-items: center; gap: 6px; flex-shrink: 0; }
+.menu-btn:hover { border-color: var(--chord); color: var(--chord); }
+.toolbar-title { font-weight: 700; font-size: 14px; color: var(--text-dim); }
+.toolbar-title b { color: var(--title); font-weight: 700; }
+.toolbar-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-left: auto; }
+
+#scroll-btn { background: var(--accent); color: #fff; border: none;
+  border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+#scroll-btn:hover { background: #58a6ff; }
+#scroll-btn.active { background: #da3633; }
+#scroll-btn.active:hover { background: #f85149; }
+
+/* SPEED SELECTOR */
+#speed-control { display: flex; flex-direction: column; align-items: center;
+  gap: 2px; user-select: none; -webkit-user-select: none; flex-shrink: 0; }
+.sc-readout { font-size: 11px; color: var(--text-dim); white-space: nowrap;
+  letter-spacing: 0.3px; }
+.sc-readout #speed-val { color: var(--chord); font-weight: 700; font-size: 12px; }
+#speed-track { position: relative; width: 188px; height: 36px;
+  cursor: pointer; touch-action: none; }
+.sc-rail { position: absolute; left: 0; right: 0; top: 9px; height: 2px;
+  background: var(--border); border-radius: 1px; pointer-events: none; }
+.sc-fill { position: absolute; left: 0; top: 0; height: 100%; width: 0;
+  background: var(--chord); border-radius: 1px; pointer-events: none; }
+.sc-dot { position: absolute; top: 5px; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--bg3); border: 2px solid var(--border);
+  padding: 0; cursor: pointer; z-index: 2; transform: translateX(-50%);
+  transition: all 0.15s ease; }
+.sc-dot:hover { border-color: var(--text-dim); background: var(--bg2);
+  transform: translateX(-50%) scale(1.35); }
+.sc-dot.active { top: 3px; width: 14px; height: 14px;
+  background: var(--chord); border-color: var(--chord);
+  box-shadow: 0 0 0 3px rgba(255,166,87,0.22); transform: translateX(-50%); }
+.sc-dot.active:hover { transform: translateX(-50%) scale(1.12); }
+.sc-label { position: absolute; top: 22px; font-size: 10px; color: var(--text-dim);
+  transform: translateX(-50%); pointer-events: none; line-height: 1;
+  transition: color 0.15s; }
+.sc-label.active-label { color: var(--chord); font-weight: 700; }
+.speed-toggle-btn { display: none; background: var(--bg3); color: var(--text-dim);
+  border: 1px solid var(--border); border-radius: 6px; width: 34px; height: 34px;
+  font-size: 15px; cursor: pointer; align-items: center; justify-content: center;
+  flex-shrink: 0; }
+.speed-toggle-btn:hover { border-color: var(--chord); color: var(--chord); }
+.speed-toggle-btn.active { color: var(--chord); border-color: var(--chord); }
+
+/* BPM DISPLAY */
+#bpm-display { display: flex; align-items: center; gap: 5px; flex-shrink: 0;
+  padding: 5px 11px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--bg3); white-space: nowrap; }
+.bpm-icon { color: var(--chord); font-size: 16px; line-height: 1; }
+#bpm-val { color: var(--title); font-weight: 800; font-size: 15px;
+  font-family: 'Consolas','Courier New',monospace; min-width: 3ch; text-align: right;
+  transition: color 0.3s; }
+#bpm-val.changed { color: var(--chord); }
+.bpm-unit { color: var(--text-dim); font-size: 11px; letter-spacing: 0.5px; }
+
+/* PAUSE HINT */
+.pause-hint { position: fixed; bottom: 72px; right: 24px;
+  background: rgba(255,166,87,0.12); color: var(--chord);
+  border: 1px solid var(--chord); border-radius: 6px; padding: 6px 12px;
+  font-size: 12px; font-weight: 600; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s; z-index: 998; }
+.pause-hint.visible { opacity: 1; }
+
+/* CONTENT */
+.content { max-width: 860px; margin: 0 auto; padding: 24px 24px 80px; }
+
+/* SONGS */
+.song { background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 32px; overflow: hidden;
+  scroll-margin-top: calc(var(--toolbar-h) + 16px); }
+
+.song-header { background: var(--bg3); border-bottom: 1px solid var(--border);
+  padding: 16px 24px; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; }
+.song-header-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.song-artist { font-size: 13px; color: var(--text-dim); font-weight: 500; }
+.song-sub { font-size: 12px; color: var(--text-dim); font-style: italic; opacity: 0.85; }
+.song-note { font-size: 12px; color: var(--text-dim); opacity: 0.85; }
+
+.song-title { font-size: 24px; font-weight: 800; color: var(--title);
+  letter-spacing: 0.5px; line-height: 1.2; }
+.song-counter { font-size: 12px; color: var(--text-dim); white-space: nowrap;
+  background: var(--bg); padding: 3px 10px; border-radius: 20px;
+  border: 1px solid var(--border); }
+.song-content { padding: 20px 24px; }
+.font-mono { font-family: 'Consolas','Courier New','Lucida Console',monospace; }
+
+/* KEY / TRANSPOSE TOOLBAR */
+.key-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  background: var(--bg3); border-bottom: 1px solid var(--border);
+  padding: 8px 24px; font-size: 13px; color: var(--text-dim); }
+.key-toolbar-label { font-weight: 600; }
+.key-bpm { font-family: 'Consolas','Courier New',monospace; color: var(--text-dim);
+  margin-right: 4px; white-space: nowrap; }
+.key-orig { font-family: 'Consolas','Courier New',monospace; color: var(--text-dim);
+  padding: 2px 6px; border: 1px solid var(--border); border-radius: 4px; }
+.key-btn { background: var(--bg2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 4px; width: 26px; height: 26px; font-size: 15px; font-weight: 700;
+  line-height: 1; cursor: pointer; transition: all 0.15s; }
+.key-btn:hover { border-color: var(--chord); color: var(--chord); }
+.key-select { background: var(--bg2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 4px; padding: 4px 8px; font-family: 'Consolas','Courier New',monospace;
+  font-size: 13px; cursor: pointer; }
+.key-reset { background: none; color: var(--text-dim); border: none;
+  padding: 4px 2px; font-size: 12px; cursor: pointer; text-decoration: underline;
+  font-family: inherit; }
+.key-reset:hover { color: var(--text); }
+.key-reset:disabled { opacity: 0.4; cursor: default; text-decoration: none; }
+.key-toolbar.key-transposed .key-select { border-color: var(--chord); color: var(--chord); }
+.key-toolbar.key-transposed .key-orig { opacity: 0.6; }
+
+.chord-line { color: var(--chord); font-weight: 700; font-size: 17px;
+  white-space: pre; background: var(--chord-bg); padding: 1px 0;
+  line-height: 1.75; display: block; overflow-x: auto; }
+.lyric-line { color: var(--text); font-size: 16px; white-space: pre;
+  line-height: 1.75; display: block; overflow-x: auto; }
+.section-label { color: var(--section); font-weight: 600; font-size: 13px;
+  text-transform: uppercase; letter-spacing: 1.5px; margin: 18px 0 6px;
+  opacity: 0.9; display: block; font-family: -apple-system, sans-serif; }
+.blank-line { height: 8px; display: block; }
+.note-line { color: var(--text-dim); font-style: italic; font-size: 13px;
+  font-family: -apple-system, sans-serif; margin: 4px 0; display: block; }
+
+/* TOP BTN */
+#top-btn { position: fixed; bottom: 28px; right: 24px; background: var(--bg3);
+  color: var(--text-dim); border: 1px solid var(--border); border-radius: 50px;
+  padding: 10px 18px; font-size: 13px; font-weight: 600; cursor: pointer;
+  opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 999; }
+#top-btn.visible { opacity: 1; pointer-events: auto; }
+#top-btn:hover { background: var(--bg2); color: var(--text); border-color: var(--chord); }
+
+/* FOOTER */
+footer.page { text-align: center; color: var(--text-dim); font-size: 12px;
+  margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+footer.page a { color: var(--accent); }
+
+/* PRINT */
+@media print {
+  .sidebar, .sidebar-overlay, .toolbar, #top-btn, .pause-hint, .key-toolbar { display: none !important; }
+  body { overflow: visible; background: #fff; color: #000; }
+  .app-shell { display: block; height: auto; }
+  .main { height: auto; overflow: visible; }
+  .content { max-width: 100%; padding: 0; }
+  .song { border: 1px solid #ccc; background: #fff; margin-bottom: 30px; page-break-inside: avoid; }
+  .song-header { background: #f0f0f0; border-bottom: 1px solid #ccc; }
+  .song-title { color: #000; }
+  .chord-line { color: #c85000; background: #fff8f0; }
+  .lyric-line { color: #000; }
+  .section-label { color: #005080; }
+}
+
+/* RESPONSIVE — collapse sidebar into a drawer, maximize content width */
+@media (max-width: 900px) {
+  :root { --toolbar-h: 52px; }
+  .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 82%; max-width: 300px;
+    transform: translateX(-100%); box-shadow: 2px 0 24px rgba(0,0,0,0.4); }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay { display: block; }
+  .menu-btn { display: inline-flex; }
+  .toolbar { padding: 8px 12px; gap: 8px; }
+  .toolbar-title { display: none; }
+  .toolbar-controls { gap: 6px; }
+  #speed-control { display: none; position: absolute; top: 100%; right: 8px;
+    margin-top: 6px; background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  #speed-control.open { display: flex; }
+  #speed-track { width: 140px; }
+  .speed-toggle-btn { display: inline-flex; }
+  #bpm-display { padding: 4px 8px; }
+  #bpm-val { font-size: 13px; }
+  #scroll-btn { padding: 5px 10px; font-size: 12px; }
+  .content { padding: 14px 12px 60px; }
+  .song-header { padding: 12px 14px; }
+  .song-title { font-size: 17px; }
+  .song-counter { display: none; }
+  .key-toolbar { padding: 6px 14px; gap: 6px; }
+  .song-content { padding: 14px 12px; }
+  .chord-line, .lyric-line { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-brand">&#9835; Setlist<span class="sidebar-count" id="sidebarCount"></span></div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="main" id="main">
+    <div class="toolbar">
+      <button id="menu-btn" class="menu-btn">&#9776; Setlist</button>
+      <span class="toolbar-title"><b>SET 2 SEP 25</b> &mdash; Chord Guide</span>
+      <div class="toolbar-controls">
+        <button id="scroll-btn">&#9654; Auto-Scroll</button>
+        <div id="bpm-display" title="Current song BPM">
+          <span class="bpm-icon">&#9834;</span>
+          <span id="bpm-val">76</span>
+          <span class="bpm-unit">BPM</span>
+        </div>
+        <button id="speed-toggle-btn" class="speed-toggle-btn" title="Fine-tune scroll speed">&#9881;</button>
+        <div id="speed-control" title="Fine-tune multiplier on top of BPM speed">
+          <div class="sc-readout">Fine Tune:&nbsp;<span id="speed-val">1</span>&times;</div>
+          <div id="speed-track">
+            <div class="sc-rail"><div class="sc-fill" id="sc-fill"></div></div>
+            <button class="sc-dot" data-idx="0" style="left:0%"></button>
+            <button class="sc-dot" data-idx="1" style="left:14.286%"></button>
+            <button class="sc-dot" data-idx="2" style="left:28.571%"></button>
+            <button class="sc-dot" data-idx="3" style="left:42.857%"></button>
+            <button class="sc-dot" data-idx="4" style="left:57.143%"></button>
+            <button class="sc-dot" data-idx="5" style="left:71.429%"></button>
+            <button class="sc-dot" data-idx="6" style="left:85.714%"></button>
+            <button class="sc-dot" data-idx="7" style="left:100%"></button>
+            <span class="sc-label" style="left:0%">0.5</span>
+            <span class="sc-label" style="left:14.286%">1</span>
+            <span class="sc-label" style="left:28.571%">1.5</span>
+            <span class="sc-label" style="left:42.857%">2</span>
+            <span class="sc-label" style="left:57.143%">2.5</span>
+            <span class="sc-label" style="left:71.429%">3</span>
+            <span class="sc-label" style="left:85.714%">3.5</span>
+            <span class="sc-label" style="left:100%">4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="songs-container"></div>
+      <footer class="page">
+        Transpose engine: <a href="transpose.js">transpose.js</a> &middot;
+        Source data: <a href="songs-data-set-2-sep-25.js">songs-data-set-2-sep-25.js</a> &middot;
+        Markdown chart: <a href="chord-guide-set-2-sep-25.md">chord-guide-set-2-sep-25.md</a>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<div id="pause-hint" class="pause-hint">&#9646;&#9646; Paused</div>
+<button id="top-btn">&#8679; Top</button>
+
+<script src="transpose.js"></script>
+<script src="songs-data-set-2-sep-25.js"></script>
+<script>
+(function () {
+  var T = window.ChordTranspose;
+  var SONGS = window.SET2_SONGS;
+
+  function slug(title) {
+    return title.toLowerCase()
+      .replace(/['’]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function familyIsFlatForKey(key) {
+    return T.FLAT_KEYS.indexOf(key) !== -1;
+  }
+
+  var songIdOf = function (song) { return 'song-' + song.number + '-' + slug(song.title); };
+
+  // ---- sidebar nav ---------------------------------------------------
+  var sidebarNav = document.getElementById('sidebarNav');
+  document.getElementById('sidebarCount').textContent = SONGS.length + ' songs';
+
+  SONGS.forEach(function (song) {
+    var a = el('a', 'nav-link');
+    a.href = '#' + songIdOf(song);
+    a.setAttribute('data-index', song.number);
+    a.appendChild(el('span', 'nav-link-title', song.title));
+    a.appendChild(el('span', 'nav-link-artist', song.artist));
+    sidebarNav.appendChild(a);
+  });
+
+  // ---- song rendering --------------------------------------------------
+  var songsEl = document.getElementById('songs-container');
+
+  SONGS.forEach(function (song) {
+    var state = {
+      offset: 0,
+      key: song.key,
+      flats: familyIsFlatForKey(song.key)
+    };
+
+    var article = el('article', 'song');
+    article.id = songIdOf(song);
+    article.setAttribute('data-index', song.number);
+    if (song.bpm) article.setAttribute('data-bpm', song.bpm);
+
+    // -- song header --
+    var header = el('div', 'song-header');
+    var headerMain = el('div', 'song-header-main');
+    headerMain.appendChild(el('h2', 'song-title', song.title));
+    headerMain.appendChild(el('div', 'song-artist', song.artist));
+    if (song.subtitle) headerMain.appendChild(el('div', 'song-sub', song.subtitle));
+    if (song.note) headerMain.appendChild(el('div', 'song-note', song.note));
+    if (song.bpmNote) headerMain.appendChild(el('div', 'song-note', song.bpmNote));
+    header.appendChild(headerMain);
+    header.appendChild(el('span', 'song-counter', 'Song ' + song.number + ' of ' + SONGS.length));
+    article.appendChild(header);
+
+    // -- key / transpose toolbar --
+    var bar = el('div', 'key-toolbar');
+    if (song.bpm) {
+      bar.appendChild(el('span', 'key-bpm', '♪ ' + (song.bpmApprox ? '~' : '') + song.bpm + ' BPM'));
+    }
+    bar.appendChild(el('span', 'key-toolbar-label', 'Key:'));
+    var keyOrig = el('span', 'key-orig', song.key);
+    keyOrig.title = 'Key as written in this chart';
+    bar.appendChild(keyOrig);
+    var minusBtn = el('button', 'key-btn key-down', '−');
+    minusBtn.type = 'button';
+    minusBtn.title = 'Transpose down a semitone';
+    bar.appendChild(minusBtn);
+    var select = document.createElement('select');
+    select.className = 'key-select';
+    select.title = 'Transpose to key…';
+    T.KEY_LIST.forEach(function (k) {
+      var opt = document.createElement('option');
+      opt.value = k;
+      opt.textContent = k + (k === song.key ? ' (orig.)' : '');
+      select.appendChild(opt);
+    });
+    bar.appendChild(select);
+    var plusBtn = el('button', 'key-btn key-up', '+');
+    plusBtn.type = 'button';
+    plusBtn.title = 'Transpose up a semitone';
+    bar.appendChild(plusBtn);
+    var resetBtn = el('button', 'key-reset', 'Reset');
+    resetBtn.type = 'button';
+    resetBtn.title = 'Back to original key';
+    resetBtn.disabled = true;
+    bar.appendChild(resetBtn);
+    article.appendChild(bar);
+
+    // -- chart content --
+    var content = el('div', 'song-content font-mono');
+    var chordLineNodes = []; // { el, original }
+
+    song.sections.forEach(function (sec, secIdx) {
+      content.appendChild(el('div', 'section-label', '[' + sec.label + ']'));
+      sec.lines.forEach(function (raw) {
+        if (raw.indexOf('// ') === 0) {
+          content.appendChild(el('div', 'note-line', raw.slice(3)));
+          return;
+        }
+        var cls = T.classifyLine(raw);
+        if (cls === 'blank') {
+          content.appendChild(el('div', 'blank-line', ' '));
+          return;
+        }
+        if (cls === 'chord') {
+          var chordEl = el('div', 'chord-line', raw);
+          chordLineNodes.push({ el: chordEl, original: raw });
+          content.appendChild(chordEl);
+        } else {
+          content.appendChild(el('div', 'lyric-line', raw));
+        }
+      });
+      if (secIdx < song.sections.length - 1) content.appendChild(el('div', 'blank-line', ' '));
+    });
+    article.appendChild(content);
+
+    // -- transpose behavior --
+    function render() {
+      keyOrig.textContent = song.key;
+      select.value = state.key;
+      resetBtn.disabled = (state.offset === 0);
+      bar.classList.toggle('key-transposed', state.offset !== 0);
+      // At the original written key, show the pristine source text — a
+      // 0-semitone "transpose" would otherwise re-spell every chord through
+      // the canonical sharp/flat tables, silently losing an unusual but
+      // deliberate spelling like "C#7/E#" (re-spelled as "C#7/F").
+      var restoring = (state.offset === 0);
+      chordLineNodes.forEach(function (n) {
+        n.el.textContent = restoring ? n.original : T.transposeLine(n.original, state.offset, state.key);
+      });
+    }
+
+    minusBtn.addEventListener('click', function () {
+      state.offset -= 1;
+      state.key = T.keyAfterShift(song.key, state.offset, state.flats);
+      render();
+    });
+    plusBtn.addEventListener('click', function () {
+      state.offset += 1;
+      state.key = T.keyAfterShift(song.key, state.offset, state.flats);
+      render();
+    });
+    select.addEventListener('change', function () {
+      var target = select.value;
+      state.offset = T.semitonesBetween(song.key, target);
+      state.flats = familyIsFlatForKey(target);
+      state.key = target;
+      render();
+    });
+    resetBtn.addEventListener('click', function () {
+      state.offset = 0;
+      state.key = song.key;
+      state.flats = familyIsFlatForKey(song.key);
+      render();
+    });
+
+    render();
+    songsEl.appendChild(article);
+  });
+
+  // ── Sidebar (setlist) — persistent on desktop, drawer on mobile ──
+  var sidebar = document.getElementById('sidebar');
+  var overlay = document.getElementById('sidebar-overlay');
+  var menuBtn = document.getElementById('menu-btn');
+  var mainEl = document.getElementById('main');
+
+  // ── Auto-scroll, synced to the current song's BPM ──
+  var scrollBtn = document.getElementById('scroll-btn');
+  var pauseHint = document.getElementById('pause-hint');
+  var scrollTimer = null;
+  var isScrolling = false;
+  var isPaused = false;
+
+  var SPEEDS = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4];
+  var speedIdx = 1; // default 1× (pure BPM speed)
+  var currentSpeed = SPEEDS[speedIdx];
+
+  // BPM-based scroll speed: at BASE_BPM × 1× = BASE_PX_SEC px/sec (comfortable pace)
+  var BASE_BPM = 78;
+  var BASE_PX_SEC = 5;
+  var currentBpm = (SONGS[0] && SONGS[0].bpm) || 78;
+  var scrollAccum = 0;
+
+  function getSpeed() {
+    var pxPerSec = BASE_PX_SEC * (currentBpm / BASE_BPM) * currentSpeed;
+    return pxPerSec / 50; // per 20 ms tick
+  }
+
+  function startScroll() {
+    scrollAccum = 0; // reset accumulator when (re)starting
+    if (scrollTimer) clearInterval(scrollTimer);
+    scrollTimer = setInterval(function () {
+      if (!isPaused) {
+        scrollAccum += getSpeed();
+        var px = Math.floor(scrollAccum);
+        if (px >= 1) {
+          mainEl.scrollBy({ top: px, left: 0, behavior: 'instant' });
+          scrollAccum -= px;
+        }
+        if ((mainEl.clientHeight + mainEl.scrollTop) >= mainEl.scrollHeight - 5) {
+          stopScroll();
+        }
+      }
+    }, 20);
+  }
+
+  function stopScroll() {
+    clearInterval(scrollTimer);
+    scrollTimer = null;
+    isScrolling = false;
+    scrollBtn.textContent = '▶ Auto-Scroll';
+    scrollBtn.classList.remove('active');
+  }
+
+  function updateBpm(bpm) {
+    currentBpm = bpm;
+    var elBpm = document.getElementById('bpm-val');
+    if (!elBpm) return;
+    elBpm.textContent = bpm;
+    elBpm.classList.remove('changed');
+    void elBpm.offsetWidth; // force reflow to restart animation
+    elBpm.classList.add('changed');
+    setTimeout(function () { elBpm.classList.remove('changed'); }, 600);
+    if (isScrolling) startScroll();
+  }
+
+  scrollBtn.addEventListener('click', function () {
+    if (isScrolling) {
+      stopScroll();
+    } else {
+      isScrolling = true;
+      scrollBtn.textContent = '⏹ Stop Scroll';
+      scrollBtn.classList.add('active');
+      startScroll();
+    }
+  });
+
+  // ── Speed selector ──
+  var scTrack = document.getElementById('speed-track');
+  var scFill = document.getElementById('sc-fill');
+  var scDots = document.querySelectorAll('.sc-dot');
+  var scLabels = document.querySelectorAll('.sc-label');
+  var scVal = document.getElementById('speed-val');
+  var isDragging = false;
+
+  function applySpeed(idx, animate) {
+    speedIdx = Math.max(0, Math.min(SPEEDS.length - 1, idx));
+    currentSpeed = SPEEDS[speedIdx];
+    scDots.forEach(function (d, i) { d.classList.toggle('active', i === speedIdx); });
+    scLabels.forEach(function (l, i) { l.classList.toggle('active-label', i === speedIdx); });
+    scVal.textContent = currentSpeed;
+    scFill.style.transition = animate ? 'width 0.15s ease' : 'none';
+    scFill.style.width = (speedIdx / (SPEEDS.length - 1) * 100) + '%';
+    if (isScrolling) startScroll();
+  }
+
+  function idxFromX(clientX) {
+    var rect = scTrack.getBoundingClientRect();
+    var pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    return Math.round(pct * (SPEEDS.length - 1));
+  }
+
+  scDots.forEach(function (dot, i) {
+    dot.addEventListener('click', function (e) { e.stopPropagation(); applySpeed(i, true); });
+  });
+
+  scTrack.addEventListener('mousedown', function (e) {
+    if (e.button !== 0) return;
+    isDragging = true;
+    applySpeed(idxFromX(e.clientX), false);
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (isDragging) applySpeed(idxFromX(e.clientX), false);
+  });
+  document.addEventListener('mouseup', function (e) {
+    if (isDragging) { isDragging = false; applySpeed(idxFromX(e.clientX), true); }
+  });
+
+  scTrack.addEventListener('touchstart', function (e) {
+    isDragging = true;
+    applySpeed(idxFromX(e.touches[0].clientX), false);
+    e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('touchmove', function (e) {
+    if (!isDragging) return;
+    applySpeed(idxFromX(e.touches[0].clientX), false);
+    e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('touchend', function (e) {
+    if (!isDragging) return;
+    isDragging = false;
+    if (e.changedTouches.length) applySpeed(idxFromX(e.changedTouches[0].clientX), true);
+  });
+
+  applySpeed(speedIdx, false); // initialise UI
+
+  // ── Fine-tune popover toggle (mobile only — desktop shows it inline) ──
+  var speedToggleBtn = document.getElementById('speed-toggle-btn');
+  var speedControl = document.getElementById('speed-control');
+  if (speedToggleBtn) {
+    speedToggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = speedControl.classList.toggle('open');
+      speedToggleBtn.classList.toggle('active', open);
+    });
+    document.addEventListener('click', function (e) {
+      if (speedControl.classList.contains('open') &&
+          !speedControl.contains(e.target) && e.target !== speedToggleBtn) {
+        speedControl.classList.remove('open');
+        speedToggleBtn.classList.remove('active');
+      }
+    });
+  }
+
+  // Pause on hover over song content
+  document.addEventListener('mouseenter', function (e) {
+    if (isScrolling && e.target && e.target.closest && e.target.closest('.song')) {
+      isPaused = true;
+      pauseHint.classList.add('visible');
+    }
+  }, true);
+
+  document.addEventListener('mouseleave', function (e) {
+    if (isScrolling && e.target && e.target.closest && e.target.closest('.song')) {
+      isPaused = false;
+      pauseHint.classList.remove('visible');
+    }
+  }, true);
+
+  document.getElementById('bpm-val').textContent = currentBpm;
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('visible');
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('visible');
+  }
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function () {
+      if (sidebar.classList.contains('open')) closeSidebar();
+      else openSidebar();
+    });
+  }
+  if (overlay) overlay.addEventListener('click', closeSidebar);
+
+  // Active song in sidebar + song switching
+  var songEls = Array.from(document.querySelectorAll('.song'));
+  var navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+  navLinks.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var targetId = a.getAttribute('href').slice(1);
+      var targetEl = document.getElementById(targetId);
+      if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeSidebar(); // switching songs always closes the mobile drawer
+    });
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var idx = entry.target.getAttribute('data-index');
+        navLinks.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('data-index') === idx);
+        });
+        var active = navLinks.find(function (a) { return a.getAttribute('data-index') === idx; });
+        if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        var bpm = parseInt(entry.target.getAttribute('data-bpm'), 10);
+        if (bpm && bpm !== currentBpm) updateBpm(bpm);
+      }
+    });
+  }, { root: mainEl, rootMargin: '-60px 0px -55% 0px', threshold: 0 });
+
+  songEls.forEach(function (s) { observer.observe(s); });
+
+  // ── Back to top ──
+  var topBtn = document.getElementById('top-btn');
+  mainEl.addEventListener('scroll', function () {
+    if (mainEl.scrollTop > 300) topBtn.classList.add('visible');
+    else topBtn.classList.remove('visible');
+  });
+  topBtn.addEventListener('click', function () {
+    mainEl.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
