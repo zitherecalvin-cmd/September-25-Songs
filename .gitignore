@@ -1,0 +1,7 @@
+# Redundant duplicates of the .docx files already in "September 25 Chords/files/"
+September 25 Chords/files.zip
+September 25 Chords/files 2.zip
+
+# Microsoft Word temp/lock files
+~$*
+*.tmp
