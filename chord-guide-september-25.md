@@ -945,6 +945,12 @@ Key of **G**
 
 > Modulates up a minor third (G -> Eb) for the final two chorus repeats — written into the chart.
 
+**[Intro]**
+
+```
+C  Em  C  Em  D
+```
+
 **[Verse]**
 
 ```

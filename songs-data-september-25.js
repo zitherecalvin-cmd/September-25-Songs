@@ -792,6 +792,9 @@
       key: "G",
       note: "Modulates up a minor third (G -> Eb) for the final two chorus repeats — written into the chart.",
       sections: [
+        { label: "Intro", lines: [
+          "C  Em  C  Em  D"
+        ] },
         { label: "Verse", lines: [
           "      G",
           "Sa wari ko'y",
