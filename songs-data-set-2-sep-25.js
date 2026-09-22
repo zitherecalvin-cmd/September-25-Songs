@@ -917,7 +917,7 @@
       note: "Written in B minor per the source sheet; \"key\" is set to \"B\" (the root pitch class) so the on-screen key label keeps updating correctly as you transpose.",
       sections: [
         { label: "Intro", lines: [
-          "Bm    C#    D    Em    F#    B"
+          "Bm    C#    D    Em    F#    Bm"
         ] },
         { label: "Verse 1", lines: [
           " Bm                      A",
@@ -929,8 +929,7 @@
           " G                     A              Bm",
           "At baka tamaan pa ng mga balang ligaw",
           "",
-          "Bm    C#    D    Em    F#    B",
-          "                         D5"
+          "Bm    C#    D    Em    F#    Bm"
         ] },
         { label: "Verse 2", lines: [
           "Bm                     A",
@@ -955,7 +954,7 @@
           "  G           A             F#m",
           "At ang hustisya ay para lang sa mayaman",
           "",
-          "F#    G     F#    D    C#    Bm"
+          "F#    G     F#    D    C#"
         ] },
         { label: "Chorus", lines: [
           "      Bm                           F#m",
@@ -963,9 +962,7 @@
           " G   A                  Bm",
           "Hindi matatapos itong gulo",
           "",
-          "Bm    C#    D    Em    F#    B",
-          "",
-          "Bm                D5"
+          "Bm    C#    D    Em    F#    Bm"
         ] },
         { label: "Verse 3", lines: [
           "Bm                      A",
@@ -987,7 +984,7 @@
           "  G           A             F#m",
           "At ang hustisya ay para lang sa mayaman",
           "",
-          "F#    G     F#    D    C#    Bm"
+          "F#    G     F#    D    C#"
         ] },
         { label: "Chorus", lines: [
           "   Bm                           F#m",
@@ -1000,12 +997,13 @@
           "Hindi matatapos itong gulo"
         ] },
         { label: "All Instruments", lines: [
-          "Bm - A - Bm - A - Bm - A",
-          "B - A - G - F# - G - A - B",
-          "Bm - A - Bm - A - Bm - A",
-          "B - A - G - F# - G - A - G"
+          "Bm  A  Bm  A  Bm",
+          "B  A  G  F#  G  A",
+          "Bm  A  Bm  A  Bm",
+          "B  A  G  F#  G  A  G"
         ] },
         { label: "Pre-Chorus", lines: [
+          "// Slower tempo (adagio)",
           "   G                             F#m",
           "Hindi pula't dilaw ang tunay na magkalaban",
           "G                            F#m",
@@ -1023,10 +1021,13 @@
           " Bm                           F#m",
           "Habang may tatsulok at sila ang nasa tuktok",
           "",
-          " G   A                  Bm",
-          "Hindi matatapos itong gulo"
+          " G   A",
+          "Hindi matatapos",
+          "G   A",
+          "Di matatapos"
         ] },
         { label: "Outro", lines: [
+          "G  A                Bm",
           "Di matatapos itong gulo"
         ] }
       ]

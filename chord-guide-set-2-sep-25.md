@@ -1114,7 +1114,7 @@ Key of **B**
 **[Intro]**
 
 ```
-Bm    C#    D    Em    F#    B
+Bm    C#    D    Em    F#    Bm
 ```
 
 **[Verse 1]**
@@ -1129,8 +1129,7 @@ Totoy tumalon ka, dumapa kung kailangan
  G                     A              Bm
 At baka tamaan pa ng mga balang ligaw
 
-Bm    C#    D    Em    F#    B
-                         D5
+Bm    C#    D    Em    F#    Bm
 ```
 
 **[Verse 2]**
@@ -1161,7 +1160,7 @@ Hangga't marami ang lugmok sa kahirapan
   G           A             F#m
 At ang hustisya ay para lang sa mayaman
 
-F#    G     F#    D    C#    Bm
+F#    G     F#    D    C#
 ```
 
 **[Chorus]**
@@ -1172,9 +1171,7 @@ Habang may tatsulok at sila ang nasa tuktok
  G   A                  Bm
 Hindi matatapos itong gulo
 
-Bm    C#    D    Em    F#    B
-
-Bm                D5
+Bm    C#    D    Em    F#    Bm
 ```
 
 **[Verse 3]**
@@ -1202,7 +1199,7 @@ Hangga't marami ang lugmok sa kahirapan
   G           A             F#m
 At ang hustisya ay para lang sa mayaman
 
-F#    G     F#    D    C#    Bm
+F#    G     F#    D    C#
 ```
 
 **[Chorus]**
@@ -1221,13 +1218,15 @@ Hindi matatapos itong gulo
 **[All Instruments]**
 
 ```
-Bm - A - Bm - A - Bm - A
-B - A - G - F# - G - A - B
-Bm - A - Bm - A - Bm - A
-B - A - G - F# - G - A - G
+Bm  A  Bm  A  Bm
+B  A  G  F#  G  A
+Bm  A  Bm  A  Bm
+B  A  G  F#  G  A  G
 ```
 
 **[Pre-Chorus]**
+
+*(Slower tempo (adagio))*
 
 ```
    G                             F#m
@@ -1250,13 +1249,16 @@ Hindi matatapos itong gulo
  Bm                           F#m
 Habang may tatsulok at sila ang nasa tuktok
 
- G   A                  Bm
-Hindi matatapos itong gulo
+ G   A
+Hindi matatapos
+G   A
+Di matatapos
 ```
 
 **[Outro]**
 
 ```
+G  A                Bm
 Di matatapos itong gulo
 ```
 
