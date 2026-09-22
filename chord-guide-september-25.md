@@ -1013,6 +1013,19 @@ Handa na 'kong hamunin ang aking mundo
 'Pagkat tuloy pa rin ohh hoohh
 ```
 
+**[Chorus]**
+
+```
+                 G              D
+Tuloy pa rin ang awit ng buhay ko
+                Em             D
+Nagbago man ang hugis ng puso mo
+                   C                G
+Handa na 'kong hamunin ang aking mundo
+                   D
+'Pagkat tuloy pa rin
+```
+
 **[Verse]**
 
 ```
@@ -1024,58 +1037,6 @@ Em           D
   Kaya nang iwanan ang
     C        D
 Bakas ng kahapon ko
-```
-
-**[Chorus]**
-
-```
-                 G              D
-Tuloy pa rin ang awit ng buhay ko
-                Em             D
-Nagbago man ang hugis ng puso mo
-                   C                G
-Handa na 'kong hamunin ang aking mundo
-                   D
-'Pagkat tuloy pa rin
-```
-
-**[Chorus]**
-
-```
-                 G              D
-Tuloy pa rin ang awit ng buhay ko
-                Em             D
-Nagbago man ang hugis ng puso mo
-                   C                G
-Handa na 'kong hamunin ang aking mundo
-                   D
-'Pagkat tuloy pa rin
-```
-
-**[Chorus]**
-
-```
-                 G              D
-Tuloy pa rin ang awit ng buhay ko (tuloy pa rin)
-                Em             D
-Nagbago man ang hugis ng puso mo (hugis ng mundo mo)
-                   C                G
-Handa na 'kong hamunin ang aking mundo (hamunin)
-                   Am          D
-'Pagkat tuloy pa rin (tuloy pa rin)
-```
-
-**[Chorus]**
-
-```
-                 G              D
-Tuloy pa rin ang awit ng buhay ko
-                Em             D
-Nagbago man ang hugis ng puso mo
-                   C                G
-Handa na 'kong hamunin ang aking mundo
-                   D
-'Pagkat tuloy pa rin
 ```
 
 **[Chorus]**
