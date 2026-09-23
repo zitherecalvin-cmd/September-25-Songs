@@ -1045,12 +1045,12 @@
         ] },
         { label: "Verse", lines: [
           "      C D           G           C D           G",
-          "Nagtataka sa akin kaibigan, nag-aaral ang buong mundo",
+          "Nagtatawa sa akin kaibigan, nag-aaral ang buong mundo",
           "         C D           G         C D   G",
           "Wala na ba tayong mga kabataan sa ating mga ulo",
           "      C D         G            C D         G",
-          "Kung gusto mo kami sigawan bakit hindi nyo subukan",
-          "    C D       G",
+          "Kung gusto mo kaming sigawan bakit hindi nyo subukan",
+          "    C D       G                C - D - G",
           "lalo nakayo di maiintindihan"
         ] },
         { label: "Chorus", lines: [
@@ -1065,10 +1065,10 @@
         ] },
         { label: "Verse", lines: [
           " C D      G",
-          "Hindi nila tayo mabibilang",
+          "Hindi Nyo kami mabibilang",
           "",
           "  C D     G",
-          "di rin maikakahon",
+          "At di rin maikakahon",
           "     C D        G            C D        G",
           "Marami kami ngunit iisa lamang ang aming pasyon"
         ] },
@@ -1087,6 +1087,39 @@
           "At sa pagtulog sa gabi maririnig ang dasal",
           "           C                         G",
           "ng mga kabataang uhaw sa tunay na pagmamahal"
+        ] },
+        { label: "Guitar Solo", lines: [
+          "C - D - G"
+        ] },
+        { label: "Verse 3", lines: [
+          "C - D - G",
+          "Nawawala, nagtatago",
+          "Naghahanap ng kaibigan",
+          "Nagtataka, nagtatanong",
+          "Kung kailan kami mapakikinggan",
+          "Kung gusto mo akong subukan",
+          "Bakit hindi mo subukan?",
+          "Subukan mo akong pigilan",
+          "Subukan n'yo kami"
+        ] },
+        { label: "Chorus", lines: [
+          "     C D      G",
+          "Ang awit ng Kabataan",
+          "     C D      G",
+          "ang awit ng panahon",
+          "     C D      G",
+          "hanggang sa kinabukasan",
+          "     C D      G",
+          "awitin natin ngayon",
+          "",
+          "Kabataan, Panahon",
+          "Kabataan, ngayon na ang ating panahon",
+          "Kabataan, Panahon",
+          "Kabataan, Panahon",
+          "Awitin natin, awitin natin",
+          "",
+          "Awit ng Kabataan",
+          "Ang awit ng panahon"
         ] }
       ]
     },
