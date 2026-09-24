@@ -111,7 +111,7 @@ doc.push('- Sharp/flat spelling automatically follows the target key\'s conventi
 doc.push('');
 doc.push('The transpose engine lives in `transpose.js` (also usable from Node) with its test suite in `test_transpose.js` (`node test_transpose.js`). Shared with the other guides in this project.');
 doc.push('');
-doc.push('BPM notes: only included where the source sheet stated one outright (This Love 95, Awit ng Kabataan 133) — the rest had no tempo marking, so bpm is omitted rather than guessed. Till They Take My Heart Away has a built-in key change written into the chart (see its note); Tadhana is written for capo 4th fret per its source sheet.');
+doc.push('BPM notes: only included where the source sheet stated one outright (This Love 95, Awit ng Kabataan 133) — the rest had no tempo marking, so bpm is omitted rather than guessed. Till They Take My Heart Away has a built-in key change written into the chart (see its note). Tadhana default key was reset to C (up 5 semitones from its original G capo-4th-fret shapes) — the chords shown are the real, capo-free chart.');
 doc.push('');
 doc.push('---');
 doc.push('');

@@ -18,13 +18,13 @@
 
 The transpose engine lives in `transpose.js` (also usable from Node) with its test suite in `test_transpose.js` (`node test_transpose.js`). Shared with the other guides in this project.
 
-BPM notes: only included where the source sheet stated one outright (This Love 95, Awit ng Kabataan 133) — the rest had no tempo marking, so bpm is omitted rather than guessed. Till They Take My Heart Away has a built-in key change written into the chart (see its note); Tadhana is written for capo 4th fret per its source sheet.
+BPM notes: only included where the source sheet stated one outright (This Love 95, Awit ng Kabataan 133) — the rest had no tempo marking, so bpm is omitted rather than guessed. Till They Take My Heart Away has a built-in key change written into the chart (see its note). Tadhana default key was reset to C (up 5 semitones from its original G capo-4th-fret shapes) — the chords shown are the real, capo-free chart.
 
 ---
 
 ## Setlist
 
-1. [Tadhana](#1-tadhana) — Up Dharma Down · Key of G
+1. [Tadhana](#1-tadhana) — Up Dharma Down · Key of C
 2. [You Are My Religion](#2-you-are-my-religion) — FireHouse · Key of C#
 3. [Tatlong Oras](#3-tatlong-oras) — Unknown · Key of B
 4. [Maling Akala](#4-maling-akala) — Brownman Revival · Key of C
@@ -37,101 +37,99 @@ BPM notes: only included where the source sheet stated one outright (This Love 9
 ---
 
 ## 1. Tadhana — Up Dharma Down
-Key of **G**
-
-> Capo 4th fret per the source sheet (chords below are written/fretted shapes, not sounding pitch).
+Key of **C**
 
 **[Intro]**
 
 ```
-G       A Bm x2
-G       Bm   x2
+C       D Em x2
+C       Em   x2
 ```
 
 **[Verse 1]**
 
 ```
-G        A     Bm
+C        D     Em
 Sa hindi inaasahang
-G        A     Bm
+C        D     Em
 Pagtatagpo ng mga mundo
-G        A     Bm
+C        D     Em
 May minsan lang na nagdugtong
-Em      F#m             G
+Am      Bm             C
 Damang dama na ang ugong nito
 
-G               A Bm
+C               D Em
 Di pa ba sapat ang sakit at lahat
-G               A Bm
+C               D Em
 Na hinding hindi ko ipararanas sa'yo?
-G              A Bm
+C              D Em
 Ibinubunyag ka ng iyong matang
-Em      F#m            G
+Am      Bm            C
 Sumisigaw ng pagsinta
 ```
 
 **[Chorus]**
 
 ```
-            G
+            C
 Ba't di pa patulan
-              Bm
+              Em
 Ang pagsuyong nagkulang?
-        G
+        C
 Tayong umaasang
-         Bm
+         Em
 Hilaga't kanluran
-         G
+         C
 Ikaw ang hantungan
 
-          Bm
+          Em
 At bilang kanlungan mo
-  Em      F#m     G
+  Am      Bm     C
 Ako ang sasagip sa'yo
 ```
 
 **[Instrumental]**
 
 ```
-G Bm   x2
-G A Bm x2
-Em
+C Em   x2
+C D Em x2
+Am
 ```
 
 **[Verse 2]**
 
 ```
-G               A Bm
+C               D Em
 Saan nga ba patungo?
-G               A Bm
+C               D Em
 Nakayapak at nahihiwagaan na
-G               A Bm
+C               D Em
 Ang bagyo ng tadhana ay
-  Em    F#m             G
+  Am    Bm             C
 Dinadala ako sa init ng bisig mo
 ```
 
 **[Chorus]**
 
 ```
-              G
+              C
 Ba't di pa sabihin
-             Bm
+             Em
 Ang hindi mo maamin?
-    G                 Bm
+    C                 Em
 Ipauubaya na lang ba 'to sa hangin?
-         G         Bm
+         C         Em
 'Wag mo ikatakot ang bulong ng damdamin mo
-Em      F#m     G
+Am      Bm     C
 Naririto ako't nakikinig sa'yo
 ```
 
 **[Outro]**
 
 ```
-G   Bm   x2
-G   A Bm x2
-G
+C   Em   x2
+C   D Em x2
+C
 ```
 
 ---
