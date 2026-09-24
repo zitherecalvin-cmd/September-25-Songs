@@ -94,7 +94,7 @@ var doc = [];
 doc.push('# SET 2 SEP 25 — Chord Guide');
 doc.push('');
 doc.push('> ' + SONGS.length + ' songs · designed to match the transpose-toolbar experience in the other guides in this project (see `chord_guide_set_2_sep_25.html`)');
-doc.push('> Source chords: `September 25 Chords/` folder in the Busking-September project (`D:\\PERSONAL\\Personal Projects\\SEPTEMBER\\September 25 Chords\\`), Ultimate-Guitar-style chord sheets — the Freestyle Medley is arranged from `Opm_Medley_Chords_by_Freestyle_Philippines.docx`');
+doc.push('> Source chords: `September 25 Chords/` folder in the Busking-September project (`D:\\PERSONAL\\Personal Projects\\SEPTEMBER\\September 25 Chords\\`), Ultimate-Guitar-style chord sheets — except Till They Take My Heart Away, sourced from `September 25 Chords/files/Till_They_Take_My_Heart_Away_Chords_by_Clair_Marlo.docx` in this repo');
 doc.push('');
 doc.push('---');
 doc.push('');
@@ -111,7 +111,7 @@ doc.push('- Sharp/flat spelling automatically follows the target key\'s conventi
 doc.push('');
 doc.push('The transpose engine lives in `transpose.js` (also usable from Node) with its test suite in `test_transpose.js` (`node test_transpose.js`). Shared with the other guides in this project.');
 doc.push('');
-doc.push('BPM notes: only included where the source sheet stated one outright (This Love 95, Awit ng Kabataan 133) — the rest had no tempo marking, so bpm is omitted rather than guessed. The Freestyle Medley has built-in key changes written into the chart (see its note); Tadhana and Kung Payagan are written for capo 4th fret, and the Freestyle Medley for capo 1st fret, per their source sheets.');
+doc.push('BPM notes: only included where the source sheet stated one outright (This Love 95, Awit ng Kabataan 133) — the rest had no tempo marking, so bpm is omitted rather than guessed. Till They Take My Heart Away has a built-in key change written into the chart (see its note); Tadhana is written for capo 4th fret per its source sheet.');
 doc.push('');
 doc.push('---');
 doc.push('');
