@@ -252,22 +252,22 @@ B C# E B
 **[Verse 1]**
 
 ```
-B                    F#
+B                    D#7
 Sa unang tingin ko pa lang
-G#m                  E
+B7          Cdim          C#m7
 Para bang itinutulak ng hangin
-              B         F#
+                       F#
 Mapang akit mong mga mata
           B
 Ang syang nag dulot sa akin
-G#m          E
+G#m               C#m7
 Na maisipan kong lapitan ka
      F#
-Ngayong nahagkan kita
-G#m
-Ohhhh
-          C#        E
-Di alam ang gagawin kung tatanggapin ba
+Ngayong nahagkan kita, Ohhhh
+          C#7
+Di alam ang gagawin
+C#m7
+Kung tatanggapin ba
   F#
 Pag sayo ito'y aking inamin
 ```
@@ -298,18 +298,20 @@ B C# E B
 **[Verse 2]**
 
 ```
-B          G#M - F      E
+B    F#    G#M - F#    E
 Umaga na't ako'y gising pa rin
-                              B
+    C#m7      F#            B7
 Sa kakatitig ko sayo ay lumalalim
-B              D#m                    E
+B              G#m                    C#m7
 Aking nadarama pangako kong hindi mapapagal
             F#
 Eh kaso lang nauutal Ohhhh
-        C#
+G#m         C#7
 Di ko alam ang gagawin
-E              F#
-Maniniwala ba sakali mang ito'y aking aminin
+C#m7
+Maniniwala ba sakali
+F#
+mang ito'y aking aminin
 ```
 
 **[Chorus]**
@@ -321,7 +323,7 @@ E
 Ako'y iyong napa-ibig
 B
 Sa tatlong oras nating pagsasama
-B                    C#
+G#m B                    C#
 Para bang ako'y nananaginip
              E
 Pwede bang maulit
@@ -332,20 +334,23 @@ Oh tatlong oras tayo pa'y magsama
 **[Bridge]**
 
 ```
+B  C#  D#  E
     E                    B
 At kung balak mo'y ibaon na lang sa limot
     E                    B
 Pwes 'wag kang magpadala sa takot
-    E                    B - C# - D# - E
+B  C#  D#  E
+    E                    B F# G#m
 Aking mahal di naman ako nagbibiro
-    E              F#
+    C#m7              F#
 Kaya sana ay pakinggan mo
 ```
 
 **[Interlude (Solo)]**
 
 ```
-F# - G - G# - G - F# - C# - E - Em
+F# - G - G# - G
+F# - C# - E - Em
 ```
 
 **[Chorus]**
@@ -357,7 +362,7 @@ E
 Ako'y iyong napa-ibig
 B
 Sa tatlong oras nating pagsasama
-B                    C#
+G#m B                    C#
 Para bang ako'y nananaginip
              E
 Pwede bang maulit
@@ -374,7 +379,7 @@ E
 Ako'y iyong napa-ibig
 B
 Sa tatlong oras nating pagsasama
-B                    C#
+G#m B                    C#
 Para bang ako'y nananaginip
              E
 Pwede bang maulit
