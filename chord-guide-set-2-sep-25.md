@@ -1106,7 +1106,7 @@ Ang kulay at tatak ay di siyang dahilan
 
   Bm                     A
 Hangga't marami ang lugmok sa kahirapan
-  G           A             F#m
+  G           A
 At ang hustisya ay para lang sa mayaman
 
 F#    G     F#    D    C#
@@ -1145,7 +1145,7 @@ G                            F#m
 Ang kulay at tatak ay di siyang dahilan
   Bm                     A
 Hangga't marami ang lugmok sa kahirapan
-  G           A             F#m
+  G           A
 At ang hustisya ay para lang sa mayaman
 
 F#    G     F#    D    C#
