@@ -25,7 +25,7 @@ BPM notes: only included where the source sheet stated one outright (September, 
 ## Setlist
 
 1. [Madonna Medley](#1-madonna-medley) — Madonna · Like a Prayer / Like a Virgin / Material Girl · Key of F
-2. [September](#2-september) — Earth, Wind & Fire · ♩ 125 BPM · Key of D
+2. [September](#2-september) — Earth, Wind & Fire · Key of D
 3. [Awitin Mo, Isasayaw Ko](#3-awitin-mo-isasayaw-ko) — VST & Company · Key of F#
 4. [Beautiful Sunday](#4-beautiful-sunday) — Daniel Boone · ♩ 120 BPM · Key of D
 5. [Salamin, Salamin](#5-salamin-salamin) — BINI · Key of F
@@ -335,101 +335,176 @@ Living in a material world
 ---
 
 ## 2. September — Earth, Wind & Fire
-♩ **125 BPM** · Key of **D**
+Key of **D**
+
+> Simplified acoustic arrangement (ver. 2 source sheet, marked beginner difficulty). The sheet is written as capo 2nd-fret shapes (C/G/D/F) — chords shown here are the real sounding pitches, transposed up 2 semitones from those shapes so no capo is needed.
 
 **[Intro]**
 
+*(Each bar: chord on beat 1, hold through the bar)*
+
 ```
-Dmaj7          C#m7      Bm7 C#m7   F#m7  (x2)
-Dmaj7         C#m7      Bm7 C#m7    C#7/E#     F#m7
-Gmaj7/A (x2)
+D  A  E    (x3)
+G           (hold)
 ```
 
 **[Verse 1]**
 
 ```
-          Dmaj7 C#m7 Bm7
+         D    A
 Do you remember
-     C#m7 F#m7            Dmaj7 C#m7 Bm7
-the 21st night of September?
-C#m7                               F#m7               Dmaj7   C#m7   Bm7
-Love was changing the minds of pretenders
-C#m7        C#7/E# F#m7   Gmaj7/A
-While chasing the clouds away
+                   E            D   A
+The twenty-first night of September?
+                        E            D   A
+Love was changin' the minds of pretenders
+                    E       G
+While chasin' the clouds away
+                D      A
+Our hearts were ringin'
+                     E            D    A
+In the key that our souls were singin'
+                     E          D   A
+As we danced in the night, remember
+                          E     G
+How the stars stole the night away, oh yeah
+```
+
+**[Chorus]**
+
+```
+D      A
+Ba-dee-ya
+              E
+Say, do you remember?
+D      A
+Ba-dee-ya
+              E
+Dancin' in September
+D      A
+Ba-dee-ya
+             E      G
+Never was a cloudy day
+```
+
+**[Post-Chorus]**
+
+```
+D      A             E
+Ba-du, ba-du, ba-du, ba-du
+D      A             E
+Ba-du, ba-du, ba-du, ba-du
+D      A             E
+Ba-du, ba-du, ba-du-da
+G
 ```
 
 **[Verse 2]**
 
 ```
-N.C.            Dmaj7     C#m7 Bm7
-Our hearts were ringing
-       C#m7        F#m7             Dmaj7 C#m7 Bm7
-In the key that our souls were singing
-C#m7           F#m7         Dmaj7 C#m7 Bm7
-As we danced in the night,
-Dmaj7                C#m7         Bm7    Gmaj7/A
-Remember, how the stars stole the night away
-```
-
-**[Chorus]**
-
-```
-Bm7   E7   C#m7          F#m7
-Ba de ya - say do you remember
-Bm7   E7   C#m7          F#m7
-Ba de ya - dancing in September
-
-Bm7   E7   C#m7          F#m7 Gmaj7/A
-Ba de ya - never was a cloudy day
-Ba de ya
-
-Bm7   E7    C#m7        F#m7
-```
-
-**[Verse 3]**
-
-```
-                  Dmaj7 C#m7 Bm7
+                D       A
 My thoughts are with you
-         C#m7           F#m7    Dmaj7 C#m7 Bm7
-Holding hands with your heart to see you
-          C#m7     F#m7
-Only blue talk and love,
-Dmaj7 C#m7 Bm7 C#m7             C#7/E#       F#m7     Gmaj7/A
-Remember                 how we knew love was here to stay
-```
-
-**[Verse 4]**
-
-```
-    Dmaj7 C#m7 Bm7              C#m7     F#m7          Dmaj7 C#m7   Bm7
-Now December         found the love that we shared in September
-      C#m7     F#
-Only blue talk and love,
-Dmaj7 C#m7 Bm7 C#m7           C#7/E#       F#m7      Gmaj7/A
-Remember                    the true love we share today
+                          E       D    A
+Holdin' hands with your heart to see you
+                    E         D A
+Only blue talk and love, remember
+                      E         G
+How we knew love was here to stay
+       D     A
+Now December
+                  E              D A
+Found a love we shared in September
+                    E         D   A
+Only blue talk and love, remember
+               E      G
+True love we share today
 ```
 
 **[Chorus]**
 
 ```
-Bm7   E7   C#m7          F#m7
-Ba de ya - say do you remember
-Bm7   E7   C#m7          F#m7
-Ba de ya - dancing in September
-Bm7   E7   C#m7          F#m7 Gmaj7/A
-Ba de ya - never was a cloudy day
+D      A
+Ba-dee-ya
+              E
+Say, do you remember?
+D      A
+Ba-dee-ya (Oh)
+              E
+Dancin' in September
+D      A
+Ba-dee-ya (Hey)
+              E     G
+Never was a cloudy day
+
+And we'll say
+D      A
+ba-dee-ya (Ba-dee-ya, dee-ya)
+              E
+Say, do you remember?
+D      A
+Ba-dee-ya (Ba-dee-ya, dee-ya)
+              E
+Dancin' in September
+D      A
+Ba-dee-ya (Ba-dee-ya, dee-ya)
+                    E     G
+Golden dreams were shiny days (Dee-ya)
+```
+
+**[Bridge]**
+
+```
+D       A             E
+The bells was ringin', oh-oh
+D     A            E
+Our souls were singin'
+D         A               E     G
+Do you remember never a cloudy day? Yow
 ```
 
 **[Chorus]**
 
 ```
-Bm7   E7   C#m7          F#m7
-Ba de ya - say do you remember
-Bm7   E7   C#m7          F#m7
-Ba de ya - dancing in September
-Bm7   E7   C#m7          F#m7 Gmaj7/A
-Ba de ya - never was a cloudy day
+              D      A
+And we'll say ba-dee-ya (Ba-dee-ya, dee-ya)
+              E
+Say, do you remember?
+D      A
+Ba-dee-ya (Ba-dee-ya, dee-ya)
+              E
+Dancin' in September
+D      A
+Ba-dee-ya (Ba-dee-ya, dee-ya)
+              E     G
+Never was a cloudy day (Dee-ya)
+              D      A
+And we'll say ba-dee-ya (Ba-dee-ya, dee-ya)
+              E
+Say, do you remember?
+D      A
+Ba-dee-ya (Ba-dee-ya, dee-ya)
+              E
+Dancin' in September
+D      A
+Ba-dee-ya (Ba-dee ya, dee-ya)
+                     E    G
+Golden dreams were shiny days (Dee-ya)
+```
+
+**[Outro]**
+
+```
+D       A              E
+Ba-dee-ya, dee-ya, dee-ya
+D       A              E
+Ba-dee-ya, dee-ya, dee-ya
+D       A              E       G
+Ba-dee-ya, dee-ya, dee-ya, dee-ya
+D       A              E
+Ba-dee-ya, dee-ya, dee-ya
+D       A              E
+Ba-dee-ya, dee-ya, dee-ya
+D       A              E       G
+Ba-dee-ya, dee-ya, dee-ya, dee-ya
 ```
 
 ---
